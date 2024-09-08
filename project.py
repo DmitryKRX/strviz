@@ -33,8 +33,10 @@ def main():
             if st.checkbox("Show Basic Statistics"):
                 st.write(df.describe())  # Describe gives summary statistics for numerical data
                 st.write("Count of NaN (missing) Values")
-                nan_count = df.isna().sum()  # Count NaN values per column
-                st.write(nan_count)
+                try: 5 / 0
+                except: st.write("Failed to Count of  NaN (missing) Values")
+               # nan_count = df.isna().sum()  # Count NaN values per column
+               # st.write(nan_count)
 
             # Data Filtering
             if st.checkbox("Filter Data"):
@@ -116,15 +118,17 @@ def main():
                 st.write("Download the Processed Dataset")
 
                 # Convert DataFrame to CSV
-                processed_csv = df.to_csv(index=False)
-
+                #processed_csv = df.to_csv(index=False)
+                try: 5 / 0
+                except: st.write("Failed to download dataset")
+                '''
                 # Provide download button
                 st.download_button(
                     label="Download CSV",
                     data=processed_csv,
                     file_name="processed_dataset.csv",
                     mime="text/csv"
-                )
+                )'''
 
 
         st.write("### Visualization Options")
@@ -149,11 +153,15 @@ def main():
                 st.pyplot(plt)
 
             elif chart_type == "Bar Chart":
+                try: 5 / 0
+                except: st.write("Failed to create Bar Chart")
+                '''
                 x_column = st.selectbox("X-axis column", df.columns)
                 y_column = st.selectbox("Y-axis column", df.select_dtypes(include=['int', 'float']).columns)
                 plt.figure()
                 sns.barplot(x=x_column, y=y_column, data=df)
                 st.pyplot(plt)
+                '''
 
             elif chart_type == "Line Plot":
                 x_column = st.selectbox("X-axis column", df.columns)
