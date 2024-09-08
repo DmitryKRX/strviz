@@ -1,5 +1,5 @@
 # strviz
-Streamlit Visualizer/Proocesser
+Streamlit Visualizer/Processer
 
 ## Run
 ```cmd
@@ -7,5 +7,5 @@ pip install streamlit
 ```
 
 ```cmd
-python -m stramlit run project.py
+python -m streamlit run project.py
 ```
