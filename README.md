@@ -2,7 +2,10 @@
 Streamlit Visualizer/Processer
 
 ## Run
+```
+pip install -r requirements.txt
+```
 
-```cmd
+```
 python -m streamlit run project.py
 ```
